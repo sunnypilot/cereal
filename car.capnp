@@ -111,6 +111,12 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     lkasDisabled @107;
     canBusMissing @111;
     controlsdLagging @112;
+    manualSteeringRequired @113;
+    manualLongitudinalRequired @114;
+    silentPedalPressed @115;
+    silentButtonEnable @116;
+    silentBrakeHold @117;
+    silentWrongGear @118;
 
     radarCanErrorDEPRECATED @15;
     communityFeatureDisallowedDEPRECATED @62;
@@ -199,6 +205,13 @@ struct CarState {
 
   # clutch (manual transmission only)
   clutchPressed @28 :Bool;
+
+  madsEnabled @44 :Bool;
+  leftBlinkerOn @45 :Bool;
+  rightBlinkerOn @46 :Bool;
+  disengageByBrake @47 :Bool;
+  belowLaneChangeSpeed @48 :Bool;
+  accEnabled @49 :Bool;
 
   # which packets this state came from
   canMonoTimes @12: List(UInt64);

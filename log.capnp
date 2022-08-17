@@ -470,6 +470,7 @@ struct PandaState @0xa7649e2575e4591e {
   usbPowerModeDEPRECATED @12 :PeripheralState.UsbPowerMode;
   safetyParamDEPRECATED @20 :Int16;
   safetyParam2DEPRECATED @26 :UInt32;
+  controlsAllowedLong @28 :Bool;
 }
 
 struct PeripheralState {
@@ -565,6 +566,9 @@ struct ControlsState @0x97ff69c53601abf1 {
   state @31 :OpenpilotState;
   enabled @19 :Bool;
   active @36 :Bool;
+  madsEnabled @63 :Bool;
+  cruiseEnabled @64 :Bool;
+  suspended @65 :Bool;
 
   longControlState @30 :Car.CarControl.Actuators.LongControlState;
   vPid @2 :Float32;
