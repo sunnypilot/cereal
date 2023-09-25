@@ -18,7 +18,7 @@ class Service:
     self.decimation = decimation
 
 
-services: dict[str, tuple] = {
+services = {
   # service: (should_log, frequency, qlog decimation (optional))
   # note: the "EncodeIdx" packets will still be in the log
   "gyroscope": (True, 104., 104),
@@ -33,7 +33,7 @@ services: dict[str, tuple] = {
   "deviceState": (True, 2., 1),
   "can": (True, 100., 1223),  # decimation gives ~5 msgs in a full segment
   "controlsState": (True, 100., 10),
-  "pandaStates": (True, 10., 1),
+  "pandaStates": (True, 2., 1),
   "peripheralState": (True, 2., 1),
   "radarState": (True, 20., 5),
   "roadEncodeIdx": (False, 20., 1),
@@ -81,6 +81,8 @@ services: dict[str, tuple] = {
   "qRoadEncodeIdx": (False, 20.),
   "userFlag": (True, 0., 1),
   "microphone": (True, 10., 10),
+  "liveMapData": (True, 0.),
+  "e2eLongState": (True, 0.),
 
   # debug
   "uiDebug": (True, 0., 1),
@@ -99,7 +101,7 @@ services: dict[str, tuple] = {
   "customReservedRawData1": (True, 0.),
   "customReservedRawData2": (True, 0.),
 }
-SERVICE_LIST = {name: Service(new_port(idx), *vals) for
+service_list = {name: Service(new_port(idx), *vals) for  # type: ignore
                 idx, (name, vals) in enumerate(services.items())}
 
 
@@ -114,7 +116,7 @@ def build_header():
 
   h += "struct service { std::string name; int port; bool should_log; int frequency; int decimation; };\n"
   h += "static std::map<std::string, service> services = {\n"
-  for k, v in SERVICE_LIST.items():
+  for k, v in service_list.items():
     should_log = "true" if v.should_log else "false"
     decimation = -1 if v.decimation is None else v.decimation
     h += '  { "%s", {"%s", %d, %s, %d, %d}},\n' % \
