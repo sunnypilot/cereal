@@ -10,6 +10,14 @@ using Car = import "car.capnp";
 # cereal, so use these if you want custom events in your fork.
 
 # you can rename the struct, but don't change the identifier
+
+enum LongitudinalPersonality {
+  aggressive @0;
+  moderate @1;
+  standard @2;
+  relaxed @3;
+}
+
 struct PandaStateSP @0x81c2f05a394cf4af {
   controlsAllowedLong @0 :Bool;
 }
@@ -43,6 +51,8 @@ struct LongitudinalPlanSP @0xf35cc4560bbf6ec2 {
 
   events @19 :List(Car.CarEvent);
   longitudinalPlanSource @20 :LongitudinalPlanSource;
+
+  personality @21 :LongitudinalPersonality;
 
   enum SpeedLimitControlState {
     inactive @0; # No speed limit set or not enabled by parameter.
