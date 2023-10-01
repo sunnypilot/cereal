@@ -11,7 +11,7 @@ using Car = import "car.capnp";
 
 # you can rename the struct, but don't change the identifier
 
-enum LongitudinalPersonality {
+enum LongitudinalPersonalitySP {
   aggressive @0;
   moderate @1;
   standard @2;
@@ -52,7 +52,7 @@ struct LongitudinalPlanSP @0xf35cc4560bbf6ec2 {
   events @19 :List(Car.CarEvent);
   longitudinalPlanSource @20 :LongitudinalPlanSource;
 
-  personality @21 :LongitudinalPersonality;
+  personality @21 :LongitudinalPersonalitySP;
 
   enum SpeedLimitControlState {
     inactive @0; # No speed limit set or not enabled by parameter.
