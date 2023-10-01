@@ -82,7 +82,6 @@ services = {
   "userFlag": (True, 0., 1),
   "microphone": (True, 10., 10),
 
-  "pandaStatesSP": (True, 2., 1),
   "controlsStateSP": (True, 100., 10),
   "longitudinalPlanSP": (True, 20., 5),
   "lateralPlanSP": (True, 20., 5),
