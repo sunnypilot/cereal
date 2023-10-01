@@ -2266,13 +2266,13 @@ struct Event {
     livestreamDriverEncodeData @122 :EncodeData;
 
     # *********** Custom: reserved for forks ***********
-    pandaStatesSP @107 :Custom.PandaStateSP;
-    controlsStateSP @108 :Custom.ControlsStateSP;
-    longitudinalPlanSP @109 :Custom.LongitudinalPlanSP;
-    lateralPlanSP @110 :Custom.LateralPlanSP;
-    driverMonitoringStateSP @111 :Custom.DriverMonitoringStateSP;
-    liveMapDataSP @112 :Custom.LiveMapDataSP;
-    e2eLongStateSP @113 :Custom.E2eLongStateSP;
+    controlsStateSP @107 :Custom.ControlsStateSP;
+    longitudinalPlanSP @108 :Custom.LongitudinalPlanSP;
+    lateralPlanSP @109 :Custom.LateralPlanSP;
+    driverMonitoringStateSP @110 :Custom.DriverMonitoringStateSP;
+    liveMapDataSP @111 :Custom.LiveMapDataSP;
+    e2eLongStateSP @112 :Custom.E2eLongStateSP;
+    customReserved6 @113 :Custom.CustomReserved6;
     customReserved7 @114 :Custom.CustomReserved7;
     customReserved8 @115 :Custom.CustomReserved8;
     customReserved9 @116 :Custom.CustomReserved9;
