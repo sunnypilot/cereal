@@ -84,6 +84,13 @@ services: dict[str, tuple] = {
   "liveMapData": (True, 0.),
   "e2eLongState": (True, 0.),
 
+  "controlsStateSP": (True, 100., 10),
+  "longitudinalPlanSP": (True, 20., 5),
+  "lateralPlanSP": (True, 20., 5),
+  "driverMonitoringStateSP": (True, 20., 10),
+  "liveMapDataSP": (True, 0.),
+  "e2eLongStateSP": (True, 0.),
+
   # debug
   "uiDebug": (True, 0., 1),
   "testJoystick": (True, 0.),
@@ -97,6 +104,9 @@ services: dict[str, tuple] = {
   "livestreamWideRoadEncodeData": (False, 20.),
   "livestreamRoadEncodeData": (False, 20.),
   "livestreamDriverEncodeData": (False, 20.),
+  "customReservedRawData0": (True, 0.),
+  "customReservedRawData1": (True, 0.),
+  "customReservedRawData2": (True, 0.),
 }
 SERVICE_LIST = {name: Service(new_port(idx), *vals) for
                 idx, (name, vals) in enumerate(services.items())}

@@ -63,7 +63,6 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     driverUnresponsive @45;
     belowSteerSpeed @46;
     lowBattery @48;
-    vehicleModelInvalid @50;
     accFaulted @51;
     sensorDataInvalid @52;
     commIssue @53;
@@ -106,7 +105,6 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     roadCameraError @100;
     driverCameraError @101;
     wideRoadCameraError @102;
-    localizerMalfunction @103;
     highCpuUsage @105;
     cruiseMismatch @106;
     lkasDisabled @107;
@@ -115,27 +113,27 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     resumeBlocked @113;
     steerTimeLimit @115;
     vehicleSensorsInvalid @116;
-    manualSteeringRequired @118;
-    manualLongitudinalRequired @119;
-    silentPedalPressed @120;
-    silentButtonEnable @121;
-    silentBrakeHold @122;
-    silentWrongGear @123;
-    spReverseGear @124;
-    preKeepHandsOnWheel @125;
-    promptKeepHandsOnWheel @126;
-    keepHandsOnWheel @127;
-    speedLimitActive @128;
-    speedLimitValueChange @129;
-    e2eLongStop @130;
-    e2eLongStart @131;
-    controlsMismatchLong @132;
-    cruiseEngageBlocked @133;
-    laneChangeRoadEdge @134;
-    locationdTemporaryError @135;
-    locationdPermanentError @136;
-    paramsdTemporaryError @137;
-    paramsdPermanentError @138;
+    locationdTemporaryError @103;
+    locationdPermanentError @118;
+    paramsdTemporaryError @50;
+    paramsdPermanentError @119;
+    manualSteeringRequired @120;
+    manualLongitudinalRequired @121;
+    silentPedalPressed @122;
+    silentButtonEnable @123;
+    silentBrakeHold @124;
+    silentWrongGear @125;
+    spReverseGear @126;
+    preKeepHandsOnWheel @127;
+    promptKeepHandsOnWheel @128;
+    keepHandsOnWheel @129;
+    speedLimitActive @130;
+    speedLimitValueChange @131;
+    e2eLongStop @132;
+    e2eLongStart @133;
+    controlsMismatchLong @134;
+    cruiseEngageBlocked @135;
+    laneChangeRoadEdge @136;
 
     radarCanErrorDEPRECATED @15;
     communityFeatureDisallowedDEPRECATED @62;
@@ -314,7 +312,7 @@ struct CarState {
 
   # deprecated
   errorsDEPRECATED @0 :List(CarEvent.EventName);
-  brakeLights @19 :Bool;
+  brakeLightsDEPRECATED @19 :Bool;
   steeringRateLimitedDEPRECATED @29 :Bool;
   canMonoTimesDEPRECATED @12: List(UInt64);
 }
