@@ -89,13 +89,6 @@ services: dict[str, tuple] = {
   "liveMapDataSP": (True, 0.),
   "e2eLongStateSP": (True, 0.),
 
-  "controlsStateSP": (True, 100., 10),
-  "longitudinalPlanSP": (True, 20., 5),
-  "lateralPlanSP": (True, 20., 5),
-  "driverMonitoringStateSP": (True, 20., 10),
-  "liveMapDataSP": (True, 0.),
-  "e2eLongStateSP": (True, 0.),
-
   # debug
   "uiDebug": (True, 0., 1),
   "testJoystick": (True, 0.),
