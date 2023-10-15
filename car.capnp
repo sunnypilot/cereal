@@ -239,6 +239,7 @@ struct CarState {
   gapAdjustCruiseTr @55 :Int32;
   endToEndLong @56 :Bool;
   customStockLong @57 :CustomStockLong;
+  madsEnabled @58 :Bool;
 
   struct CustomStockLong {
     cruiseButton @0 :Int16;
