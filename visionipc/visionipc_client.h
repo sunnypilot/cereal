@@ -17,9 +17,7 @@ private:
   Poller * poller;
 
   cl_device_id device_id = nullptr;
-  cl_context ctx = nullptr;
-
-  void init_msgq(bool conflate);
+  cl_context ctx = nullptr;\
 
 public:
   bool connected = false;
