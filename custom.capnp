@@ -20,6 +20,11 @@ enum LongitudinalPersonalitySP {
 
 struct ControlsStateSP @0x81c2f05a394cf4af {
   lateralState @0 :Text;
+  madsEnabled @1 :Bool;
+  disengageByBrake @2 :Bool;
+  belowLaneChangeSpeed @3 :Bool;
+  accEnabled @4 :Bool;
+  latActive @5 :Bool;
 }
 
 struct LongitudinalPlanSP @0xaedffd8f31e7b55d {
