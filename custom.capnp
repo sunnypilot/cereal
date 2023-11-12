@@ -20,6 +20,39 @@ enum LongitudinalPersonalitySP {
 
 struct ControlsStateSP @0x81c2f05a394cf4af {
   lateralState @0 :Text;
+
+  lateralControlState :union {
+    indiState @1 :LateralINDIState;
+    pidState @2 :LateralPIDState;
+    angleState @3 :LateralAngleState;
+    debugState @4 :LateralDebugState;
+    torqueState @5 :LateralTorqueState;
+    curvatureState @6 :LateralCurvatureState;
+
+    lqrStateDEPRECATED @7 :LateralLQRState;
+  }
+
+  struct LateralINDIState {
+  }
+
+  struct LateralPIDState {
+  }
+
+  struct LateralAngleState {
+  }
+
+  struct LateralDebugState {
+  }
+
+  struct LateralTorqueState {
+    nnLog @0 :List(Float32);
+  }
+
+  struct LateralCurvatureState {
+  }
+
+  struct LateralLQRState {
+  }
 }
 
 struct LongitudinalPlanSP @0xaedffd8f31e7b55d {
