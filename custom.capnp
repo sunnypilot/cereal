@@ -110,7 +110,7 @@ struct LongitudinalPlanSP @0xaedffd8f31e7b55d {
   }
 }
 
-struct lateralPlanSPDEPRECATED @0xf35cc4560bbf6ec2 {
+struct LateralPlanSPDEPRECATED @0xf35cc4560bbf6ec2 {
   laneWidth @0 :Float32;
   lProb @1 :Float32;
   rProb @2 :Float32;

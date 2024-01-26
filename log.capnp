@@ -2320,7 +2320,7 @@ struct Event {
     # *********** Custom: reserved for forks ***********
     controlsStateSP @107 :Custom.ControlsStateSP;
     longitudinalPlanSP @108 :Custom.LongitudinalPlanSP;
-    lateralPlanSPDEPRECATED @109 :Custom.lateralPlanSPDEPRECATED;
+    lateralPlanSPDEPRECATED @109 :Custom.LateralPlanSPDEPRECATED;
     driverMonitoringStateSP @110 :Custom.DriverMonitoringStateSP;
     liveMapDataSP @111 :Custom.LiveMapDataSP;
     e2eLongStateSP @112 :Custom.E2eLongStateSP;
