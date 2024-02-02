@@ -116,8 +116,6 @@ struct LateralPlanSP @0xf35cc4560bbf6ec2 {
   rProb @2 :Float32;
 
   dProb @3 :Float32;
-  dPathWLinesX @6 :List(Float32);
-  dPathWLinesY @7 :List(Float32);
 
   laneChangePrev @8 :Bool;
   laneChangeEdgeBlock @10 :Bool;
@@ -125,6 +123,9 @@ struct LateralPlanSP @0xf35cc4560bbf6ec2 {
   dynamicLaneProfile @4 :Int8;
   standstillElapsed @5 :Float32;
   dynamicLaneProfileStatus @9 :Bool;
+
+  dPathWLinesXDEPRECATED @6 :List(Float32);
+  dPathWLinesYDEPRECATED @7 :List(Float32);
 }
 
 struct DriverMonitoringStateSP @0xda96579883444c35 {
