@@ -51,7 +51,6 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     parkBrake @29;
     manualRestart @30;
     lowSpeedLockout @31;
-    plannerError @32;
     joystickDebug @34;
     steerTempUnavailableSilent @35;
     resumeRequired @36;
@@ -162,6 +161,7 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     startupFuzzyFingerprintDEPRECATED @97;
     noTargetDEPRECATED @25;
     brakeUnavailableDEPRECATED @2;
+    plannerErrorDEPRECATED @32;
   }
 }
 
@@ -479,9 +479,9 @@ struct CarParams {
   enableBsm @56 :Bool;       # blind spot monitoring
   flags @64 :UInt32;         # flags for car specific quirks
   experimentalLongitudinalAvailable @71 :Bool;
-  pcmCruiseSpeed @73 :Bool;  # is openpilot's state tied to the PCM's cruise speed?
-  customStockLongAvailable @74 :Bool;
-  spFlags @75 :UInt32;       # flags for car specific quirks in sunnypilot
+  pcmCruiseSpeed @74 :Bool;  # is openpilot's state tied to the PCM's cruise speed?
+  customStockLongAvailable @75 :Bool;
+  spFlags @76 :UInt32;       # flags for car specific quirks in sunnypilot
 
   minEnableSpeed @7 :Float32;
   minSteerSpeed @8 :Float32;
@@ -533,6 +533,7 @@ struct CarParams {
   openpilotLongitudinalControl @37 :Bool; # is openpilot doing the longitudinal control?
   carVin @38 :Text; # VIN number queried during fingerprinting
   dashcamOnly @41: Bool;
+  passive @73: Bool;   # is openpilot in control?
   transmissionType @43 :TransmissionType;
   carFw @44 :List(CarFw);
 
