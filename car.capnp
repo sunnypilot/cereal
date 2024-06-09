@@ -115,26 +115,27 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     locationdPermanentError @118;
     paramsdTemporaryError @50;
     paramsdPermanentError @119;
-    manualSteeringRequired @120;
-    manualLongitudinalRequired @121;
-    silentPedalPressed @122;
-    silentButtonEnable @123;
-    silentBrakeHold @124;
-    silentWrongGear @125;
-    spReverseGear @126;
-    preKeepHandsOnWheel @127;
-    promptKeepHandsOnWheel @128;
-    keepHandsOnWheel @129;
-    speedLimitActive @130;
-    speedLimitValueChange @131;
-    e2eLongStop @132;
-    e2eLongStart @133;
-    controlsMismatchLong @134;
-    cruiseEngageBlocked @135;
-    laneChangeRoadEdge @136;
-    speedLimitPreActive @137;
-    speedLimitConfirmed @138;
-    torqueNNLoad @139;
+    actuatorsApiUnavailable @120;
+    manualSteeringRequired @121;
+    manualLongitudinalRequired @122;
+    silentPedalPressed @123;
+    silentButtonEnable @124;
+    silentBrakeHold @125;
+    silentWrongGear @126;
+    spReverseGear @127;
+    preKeepHandsOnWheel @128;
+    promptKeepHandsOnWheel @129;
+    keepHandsOnWheel @130;
+    speedLimitActive @131;
+    speedLimitValueChange @132;
+    e2eLongStop @133;
+    e2eLongStart @134;
+    controlsMismatchLong @135;
+    cruiseEngageBlocked @136;
+    laneChangeRoadEdge @137;
+    speedLimitPreActive @138;
+    speedLimitConfirmed @139;
+    torqueNNLoad @140;
 
     radarCanErrorDEPRECATED @15;
     communityFeatureDisallowedDEPRECATED @62;
@@ -174,6 +175,8 @@ struct CarState {
   # CAN health
   canValid @26 :Bool;       # invalid counter/checksums
   canTimeout @40 :Bool;     # CAN bus dropped out
+  canErrorCounter @48 :UInt32;
+  canRcvTimeout @49 :Bool;
 
   # car speed
   vEgo @1 :Float32;          # best estimate of speed
@@ -232,16 +235,16 @@ struct CarState {
   # clutch (manual transmission only)
   clutchPressed @28 :Bool;
 
-  madsEnabled @48 :Bool;
-  leftBlinkerOn @49 :Bool;
-  rightBlinkerOn @50 :Bool;
-  disengageByBrake @51 :Bool;
-  belowLaneChangeSpeed @52 :Bool;
-  accEnabled @53 :Bool;
-  latActive @54 :Bool;
-  gapAdjustCruiseTr @55 :Int32;
-  endToEndLong @56 :Bool;
-  customStockLong @57 :CustomStockLong;
+  madsEnabled @51 :Bool;
+  leftBlinkerOn @52 :Bool;
+  rightBlinkerOn @53 :Bool;
+  disengageByBrake @54 :Bool;
+  belowLaneChangeSpeed @55 :Bool;
+  accEnabled @56 :Bool;
+  latActive @57 :Bool;
+  gapAdjustCruiseTr @58 :Int32;
+  endToEndLong @59 :Bool;
+  customStockLong @60 :CustomStockLong;
 
   struct CustomStockLong {
     cruiseButton @0 :Int16;
@@ -259,6 +262,9 @@ struct CarState {
 
   fuelGauge @41 :Float32; # battery or fuel tank level from 0.0 to 1.0
   charging @43 :Bool;
+
+  # process meta
+  cumLagMs @50 :Float32;
 
   struct WheelSpeeds {
     # optional wheel speeds
